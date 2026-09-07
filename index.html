@@ -103,6 +103,14 @@
   .activity-card .icon-wrap svg{width:28px;height:28px;}
   .activity-card h3{font-size:1.1rem;margin-bottom:8px;}
   .activity-card p{font-size:.88rem;color:#6b6155;}
+  .activity-card-photo{padding:0;overflow:hidden;text-align:left;}
+  .activity-thumb{aspect-ratio:4/3;overflow:hidden;}
+  .activity-thumb img{width:100%;height:100%;object-fit:cover;}
+  .activity-body{padding:22px;}
+  .activity-body .icon-wrap.small{width:40px;height:40px;margin:0 0 12px;}
+  .activity-body .icon-wrap.small svg{width:20px;height:20px;}
+  .activity-body h3{font-size:1.05rem;margin-bottom:6px;}
+  .activity-body p{font-size:.85rem;color:#6b6155;}
 
   /* AMENITIES */
   .amenities-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
@@ -445,24 +453,27 @@
         <h3>Enquire about dates</h3>
         <p>Send over your preferred dates and party size, and we'll get back to you with availability and pricing.</p>
         <ul class="contact-details">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 19 9 8l4 6 2-3 6 8H3Z"/><path d="M13 14l-2-3-1.5 2.3"/></svg> contact@chaletlaclusaz.example</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 19 9 8l4 6 2-3 6 8H3Z"/><path d="M13 14l-2-3-1.5 2.3"/></svg> vic10000@mac.com</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.3"/></svg> La Clusaz, Haute-Savoie, France</li>
         </ul>
       </div>
-      <form action="mailto:contact@chaletlaclusaz.example" method="post" enctype="text/plain">
+      <form action="https://formsubmit.co/vic10000@mac.com" method="POST">
+        <input type="hidden" name="_subject" value="New enquiry — Chalet La Clusaz">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_captcha" value="false">
         <div class="row">
-          <div><label>Name</label><input type="text" placeholder="Your name" required></div>
-          <div><label>Email</label><input type="email" placeholder="you@example.com" required></div>
+          <div><label>Name</label><input type="text" name="Name" placeholder="Your name" required></div>
+          <div><label>Email</label><input type="email" name="Email" placeholder="you@example.com" required></div>
         </div>
         <div class="row">
-          <div><label>Arrival</label><input type="date"></div>
-          <div><label>Departure</label><input type="date"></div>
+          <div><label>Arrival</label><input type="date" name="Arrival"></div>
+          <div><label>Departure</label><input type="date" name="Departure"></div>
         </div>
         <div class="full" style="margin-bottom:16px;">
-          <label>Number of guests</label><input type="number" min="1" placeholder="e.g. 6">
+          <label>Number of guests</label><input type="number" name="Guests" min="1" placeholder="e.g. 6">
         </div>
         <div class="full" style="margin-bottom:20px;">
-          <label>Message</label><textarea placeholder="Tell us about your trip..."></textarea>
+          <label>Message</label><textarea name="Message" placeholder="Tell us about your trip..."></textarea>
         </div>
         <button type="submit" class="btn full">Send Enquiry</button>
       </form>
